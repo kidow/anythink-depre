@@ -13,6 +13,7 @@
     "lodash.debounce": "^4.0.8",
     "react": "^16.13.1",
     "react-copy-to-clipboard": "^5.0.2",
+    "react-debounce-input": "^3.2.2",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "typescript": "~3.7.2"
@@ -21,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "firebase deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,5 +44,8 @@
     "@types/react-copy-to-clipboard": "^4.3.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^9.0.2"
+  },
+  "engines": {
+    "node": "8"
   }
 }

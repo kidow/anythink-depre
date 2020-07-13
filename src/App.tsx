@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
+import { DebounceInput } from 'react-debounce-input'
 import CopyIcon from './copy-regular.svg'
 import RedoIcon from './redo-solid.svg'
 import GithubIcon from './github-brands.svg'
@@ -11,11 +12,15 @@ const App: React.FunctionComponent<Props> = () => {
   const [anythink, setAnythink] = useState<string>(localValue || '')
   return (
     <>
-      <textarea
+      <DebounceInput
+        element="textarea"
         placeholder="아무 생각..."
         autoFocus
+        debounceTimeout={2000}
         value={anythink}
-        onChange={(e) => setAnythink(e.target.value)}
+        spellCheck={false}
+        forceNotifyByEnter={false}
+        onChange={(e) => localStorage.setItem('anythink', e.target.value)}
         autoCapitalize="off"
         autoComplete="off"
       />
