@@ -1,15 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { DebounceInput } from 'react-debounce-input'
 import CopyIcon from './copy-regular.svg'
 import RedoIcon from './redo-solid.svg'
 import GithubIcon from './github-brands.svg'
+import { signInAnonymously } from 'services'
 
 interface Props {}
 
 const App: React.FunctionComponent<Props> = () => {
   const localValue = localStorage.getItem('anythink')
   const [anythink, setAnythink] = useState<string>(localValue || '')
+  useEffect(() => {
+    signInAnonymously()
+  }, [])
   return (
     <>
       <DebounceInput
