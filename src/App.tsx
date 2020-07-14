@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import { DebounceInput } from 'react-debounce-input'
-import CopyIcon from './copy-regular.svg'
-import RedoIcon from './redo-solid.svg'
-import GithubIcon from './github-brands.svg'
 import { signInAnonymously } from 'services'
 import * as Sentry from '@sentry/browser'
 import { BrowserOptions } from '@sentry/browser'
 import { captureException } from 'services'
+import { FaGithub, FaRedo, FaCopy } from 'react-icons/fa'
 
 let options: BrowserOptions = {
   dsn: process.env.REACT_APP_SENTRY_DSN,
@@ -78,18 +76,14 @@ class App extends Component<Props, State> {
           autoCapitalize="off"
           autoComplete="off"
         />
-        <img
-          src={GithubIcon}
-          alt="github"
+        <FaGithub
           className="github"
           onClick={() => window.open('https://github.com/kidow/anythink')}
         />
         <CopyToClipboard text={anythink}>
-          <img src={CopyIcon} alt="clipboard" className="clipboard" />
+          <FaCopy className="clipboard" />
         </CopyToClipboard>
-        <img
-          src={RedoIcon}
-          alt="redo"
+        <FaRedo
           className="redo"
           onClick={() => this.setState({ anythink: '' })}
         />

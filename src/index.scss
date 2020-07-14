@@ -48,20 +48,21 @@ body {
       height: 100%;
       font-size: 44.8px;
       &::placeholder {
-        color: #aaa;
+        color: #f3f3f3;
         font-style: italic;
       }
       &::-webkit-scrollbar {
         display: none;
       }
     }
-    img {
+    svg {
       cursor: pointer;
       width: 40px;
       height: 40px;
       position: fixed;
       right: 20px;
       top: 20px;
+      color: #333;
       &.clipboard {
         top: 75px;
       }
