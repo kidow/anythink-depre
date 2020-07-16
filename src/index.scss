@@ -1,3 +1,5 @@
+$brand-color: #5ce1e6;
+
 * {
   box-sizing: border-box;
 }
@@ -63,6 +65,9 @@ body {
       right: 20px;
       top: 20px;
       color: #333;
+      &:hover {
+        color: $brand-color;
+      }
       &.clipboard {
         top: 75px;
       }
