@@ -61,21 +61,20 @@ body {
       cursor: pointer;
       width: 40px;
       height: 40px;
-      position: fixed;
-      right: 20px;
-      top: 20px;
+      position: absolute;
+      left: 0px;
+      top: -50px;
       color: #333;
       &:hover {
         color: $brand-color;
       }
       &.clipboard {
-        top: 75px;
+        left: 50px;
       }
       &.redo {
-        top: 130px;
+        left: 100px;
       }
       @media screen and (max-width: 480px) {
-        position: absolute;
         width: 30px;
         height: 30px;
         bottom: 20px;
@@ -83,13 +82,16 @@ body {
         &.clipboard {
           bottom: 65px;
           top: unset;
+          left: unset;
         }
         &.github {
           bottom: 110px;
           top: unset;
+          left: unset;
         }
         &.redo {
           top: unset;
+          left: unset;
         }
       }
     }
